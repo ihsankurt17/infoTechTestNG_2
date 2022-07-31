@@ -12,22 +12,32 @@ public class WindowsHandleTest extends TestBase {
     @Test
     public void windowHandle() throws InterruptedException {
         driver.get("https://the-internet.herokuapp.com/windows");
-        String handle=driver.getWindowHandle();
+
+        //sayfanin Handle'ini aldik
+        String handle = driver.getWindowHandle();
         System.out.println(handle);
 
+        // WebElement element=driver.findElement(By.partialLinkText("Click Here"));
+        // element.click();
         driver.findElement(By.partialLinkText("Click Here")).click();
-        Set<String>tumElementler=driver.getWindowHandles();
 
-        for (String w:tumElementler){
+        //Tum sayfalarin handle'ini aliyoruz
+
+        Set<String> tumElementler = driver.getWindowHandles();
+
+        for (String w : tumElementler) {
             System.out.println(w);
         }
 
-Object []array=(Object[]) tumElementler.toArray();
-        String sonSayfaHandle=array[array.length-1].toString();
-        System.out.println("son sayfa handle:"+sonSayfaHandle);
+        //Set olan listesmizi Once Array'e ceviriyoruz
+
+        Object[] array = (Object[]) tumElementler.toArray();
+
+        //istedigimiz sayfanin index'ini yazip cagiriyoruz
+        String sonSayfaHandle = array[array.length - 1].toString();
+        System.out.println("son sayfa handle:" + sonSayfaHandle);
         Thread.sleep(3000);
         driver.switchTo().window(handle);
-
 
 
     }

@@ -36,8 +36,8 @@ public class SoftAssertTest {
         sortAssert.assertTrue(title.contains("Amazon"));
         sortAssert.assertEquals("online", title);
         sortAssert.assertFalse(title.contains("Car"));
-        //yukaridki tum testleri,izin dogru olup olmadigini assert(dogrulamasini)yapiyoruz.
-       sortAssert.assertAll();
+        //yukaridki tum testlerimizin dogru olup olmadigini assert(dogrulamasini)yapiyoruz.
+       sortAssert.assertAll();//bununla yapiyoruz.
     }
 
 }
