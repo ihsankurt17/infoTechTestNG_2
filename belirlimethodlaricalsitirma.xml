@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite - Belirli Method calistirma">
+    <test name="Test - method testleri">
+        <classes>
+            <!--Yorum burda bu sekilde isaretler ile yazilir. -->
+
+            <class name="com.infoTech.tests.ActionsClass">
+                <methods>
+                    <!-- include method eklemis oluruz ve sadece o classtan bu methodlari calistirir. -->
+                    <include name="rightClick"> </include>
+                    <include name="mouse"></include>
+                </methods>
+
+            </class>
+            <class name="com.infoTech.tests.Wait_bekleme">
+                <!--exclude derseni calistirmak istemediginiz methodu koymus olursunuz, diger methodlar calismis olur.-->
+                <methods>
+                    <exclude name="implicitlyWait_komutu"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

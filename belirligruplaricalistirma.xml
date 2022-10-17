@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite - Test Gruplari">
+    <test name="Test - amazon ve login olan testler">
+        <groups>
+            <run>
+                <include name="amazon"></include>
+                <include name="login"></include>
+            </run>
+        </groups>
+        <packages>
+            <!--.* butun paketlerde arama yapilabilir demek -->
+            <package name=".*"></package>
+        </packages>
+    </test>
+</suite>
